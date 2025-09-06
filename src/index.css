@@ -1,0 +1,282 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DevMentor AI Design System - Modern Tech Aesthetic */
+
+@layer base {
+  :root {
+    /* Core Background & Surfaces */
+    --background: 222 84% 3.9%;
+    --foreground: 210 40% 98%;
+    --surface: 224 71% 4%;
+    --surface-variant: 225 69% 8%;
+
+    /* Code Editor Theme */
+    --editor-bg: 220 71% 4.2%;
+    --editor-gutter: 219 69% 6%;
+    --editor-selection: 247 100% 50% / 0.2;
+    --editor-line-highlight: 220 100% 50% / 0.05;
+
+    /* Brand Colors - Purple/Blue Tech Gradient */
+    --primary: 247 84% 57%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 247 100% 70%;
+    --primary-variant: 260 84% 50%;
+
+    --secondary: 225 69% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* AI Assistant Colors */
+    --ai-accent: 291 100% 57%;
+    --ai-accent-glow: 291 100% 70%;
+    --ai-response: 225 69% 9%;
+    --success: 142 71% 45%;
+    --success-glow: 142 71% 60%;
+    --warning: 38 92% 50%;
+    --error: 0 84% 60%;
+
+    /* UI Components */
+    --card: 224 71% 5%;
+    --card-foreground: 210 40% 98%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    --muted: 225 69% 10%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 225 69% 12%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 225 69% 15%;
+    --input: 225 69% 12%;
+    --ring: 247 84% 57%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-variant)));
+    --gradient-ai: linear-gradient(135deg, hsl(var(--ai-accent)), hsl(var(--primary)));
+    --gradient-surface: linear-gradient(135deg, hsl(var(--surface)), hsl(var(--surface-variant)));
+    --gradient-glow: radial-gradient(circle at center, hsl(var(--primary-glow) / 0.15), transparent 70%);
+
+    /* Code Syntax Colors */
+    --syntax-keyword: 291 100% 70%;
+    --syntax-string: 142 71% 60%;
+    --syntax-number: 38 92% 60%;
+    --syntax-comment: 215 20% 50%;
+    --syntax-function: 198 100% 70%;
+    --syntax-variable: 210 40% 90%;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+    --shadow-ai-glow: 0 0 30px hsl(var(--ai-accent) / 0.3);
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+    background: linear-gradient(135deg, hsl(var(--background)), hsl(var(--surface)));
+  }
+
+  /* Code Editor Styles */
+  .monaco-editor {
+    background: hsl(var(--editor-bg)) !important;
+  }
+
+  .monaco-editor .margin {
+    background: hsl(var(--editor-gutter)) !important;
+  }
+
+  .monaco-editor .current-line {
+    background: hsl(var(--editor-line-highlight)) !important;
+  }
+
+  .monaco-editor .selected-text {
+    background: hsl(var(--editor-selection)) !important;
+  }
+
+  /* Custom Scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent));
+  }
+}
+
+/* Floating animations for landing page */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(5deg); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-25px) rotate(-3deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 7s ease-in-out infinite 2s;
+}
+
+/* Grid background */
+.bg-grid-white\/5 {
+  background-image: linear-gradient(hsl(var(--border)) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.05;
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary-variant text-primary-foreground shadow-lg;
+    transition: var(--transition-smooth);
+  }
+
+  .btn-primary:hover {
+    @apply shadow-xl scale-105;
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-ai {
+    @apply bg-gradient-to-r from-ai-accent to-primary text-primary-foreground;
+    transition: var(--transition-smooth);
+  }
+
+  .btn-ai:hover {
+    @apply scale-105;
+    box-shadow: var(--shadow-ai-glow);
+  }
+
+  .btn-glass {
+    @apply bg-surface/50 backdrop-blur-sm border border-border/50 text-foreground;
+    transition: var(--transition-smooth);
+  }
+
+  .btn-glass:hover {
+    @apply bg-surface/70 border-border;
+  }
+
+  /* Card Variants */
+  .card-gradient {
+    background: var(--gradient-surface);
+    @apply border border-border/20 backdrop-blur-sm;
+  }
+
+  .card-glow {
+    @apply relative overflow-hidden;
+  }
+
+  .card-glow::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: var(--gradient-glow);
+    opacity: 0;
+    transition: var(--transition-smooth);
+    z-index: -1;
+  }
+
+  .card-glow:hover::before {
+    opacity: 1;
+  }
+
+  /* Animation Classes */
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 3s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+  }
+  to {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.4);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
