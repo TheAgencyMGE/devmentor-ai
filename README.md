@@ -84,5 +84,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🔗 Links
 
-- **Live Demo**: [DevMentor AI](https://devmentor-ai.vercel.app)
+- **Live Demo**: [DevMentor AI](https://devmentor-ai-ten.vercel.app)
 - **Repository**: [GitHub](https://github.com/TheAgencyMGE/devmentor-ai)
